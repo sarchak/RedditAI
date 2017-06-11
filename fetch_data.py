@@ -23,7 +23,7 @@ def save_post(submission):
 
     submissions.update({'submission_id': submission.id}, sub, upsert=True)
   except:
-    x = 1
+    pass
 
   for i, comment in enumerate(submission.comments.list()):
     try:
@@ -35,7 +35,7 @@ def save_post(submission):
       }
       comments.update({'comment_id': comment.id}, comm, upsert=True)
     except:
-      x = 1
+      pass
 
 reddit_list = ['entrepreneur', 'smallbusiness', 'seo', 'marketing', 'bigseo', 'socialmedia',
                'PPC', 'AskMarketing', 'GrowthHacking', 'Emailmarketing', 'analytics', 'EntrepreneurRideAlong', 'digitalnomad']
